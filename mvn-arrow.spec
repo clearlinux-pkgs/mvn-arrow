@@ -4,13 +4,13 @@
 #
 Name     : mvn-arrow
 Version  : 0.10.0
-Release  : 1
+Release  : 2
 URL      : https://repo1.maven.org/maven2/org/apache/arrow/arrow-memory/0.10.0/arrow-memory-0.10.0.jar
 Source0  : https://repo1.maven.org/maven2/org/apache/arrow/arrow-memory/0.10.0/arrow-memory-0.10.0.jar
 Source1  : https://repo1.maven.org/maven2/org/apache/arrow/arrow-memory/0.10.0/arrow-memory-0.10.0.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
-License  : Apache-2.0
+License  : Apache-2.0 BSD-2-Clause BSD-3-Clause MIT NCSA
 Requires: mvn-arrow-data = %{version}-%{release}
 
 %description
