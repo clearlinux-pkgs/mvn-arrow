@@ -4,17 +4,46 @@
 #
 Name     : mvn-arrow
 Version  : 0.10.0
-Release  : 2
-URL      : https://repo1.maven.org/maven2/org/apache/arrow/arrow-memory/0.10.0/arrow-memory-0.10.0.jar
-Source0  : https://repo1.maven.org/maven2/org/apache/arrow/arrow-memory/0.10.0/arrow-memory-0.10.0.jar
-Source1  : https://repo1.maven.org/maven2/org/apache/arrow/arrow-memory/0.10.0/arrow-memory-0.10.0.pom
-Summary  : No detailed summary available
+Release  : 3
+URL      : https://github.com/apache/arrow/archive/apache-arrow-0.10.0.tar.gz
+Source0  : https://github.com/apache/arrow/archive/apache-arrow-0.10.0.tar.gz
+Source1  : https://repo1.maven.org/maven2/org/apache/arrow/arrow-format/0.10.0/arrow-format-0.10.0.jar
+Source2  : https://repo1.maven.org/maven2/org/apache/arrow/arrow-format/0.10.0/arrow-format-0.10.0.pom
+Source3  : https://repo1.maven.org/maven2/org/apache/arrow/arrow-java-root/0.10.0/arrow-java-root-0.10.0.pom
+Source4  : https://repo1.maven.org/maven2/org/apache/arrow/arrow-memory/0.10.0/arrow-memory-0.10.0.jar
+Source5  : https://repo1.maven.org/maven2/org/apache/arrow/arrow-memory/0.10.0/arrow-memory-0.10.0.pom
+Source6  : https://repo1.maven.org/maven2/org/apache/arrow/arrow-vector/0.10.0/arrow-vector-0.10.0.jar
+Source7  : https://repo1.maven.org/maven2/org/apache/arrow/arrow-vector/0.10.0/arrow-vector-0.10.0.pom
+Summary  : Plasma is an in-memory object store and cache for big data.
 Group    : Development/Tools
 License  : Apache-2.0 BSD-2-Clause BSD-3-Clause MIT NCSA
 Requires: mvn-arrow-data = %{version}-%{release}
+Requires: cloudpickle
+Requires: numpy
+Requires: six
+BuildRequires : buildreq-cmake
+BuildRequires : buildreq-distutils3
+BuildRequires : buildreq-golang
+BuildRequires : buildreq-meson
+BuildRequires : cloudpickle
+BuildRequires : docbook-xml
+BuildRequires : gtk-doc
+BuildRequires : gtk-doc-dev
+BuildRequires : libxslt-bin
+BuildRequires : numpy
+BuildRequires : pytest-runner
+BuildRequires : setuptools_scm
+BuildRequires : six
 
 %description
-No detailed description available
+<!---
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
 
 %package data
 Summary: data components for the mvn-arrow package.
@@ -29,11 +58,26 @@ data components for the mvn-arrow package.
 %build
 
 %install
-mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/arrow/arrow-memory/0.10.0
-cp %{SOURCE0} %{buildroot}/usr/share/java/.m2/repository/org/apache/arrow/arrow-memory/0.10.0
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/arrow/arrow-format/0.10.0
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/apache/arrow/arrow-format/0.10.0
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/arrow/arrow-format/0.10.0
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/apache/arrow/arrow-format/0.10.0
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/arrow/arrow-java-root/0.10.0
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/apache/arrow/arrow-java-root/0.10.0
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/arrow/arrow-memory/0.10.0
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/apache/arrow/arrow-memory/0.10.0
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/apache/arrow/arrow-memory/0.10.0
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/arrow/arrow-memory/0.10.0
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/org/apache/arrow/arrow-memory/0.10.0
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/arrow/arrow-vector/0.10.0
+cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/org/apache/arrow/arrow-vector/0.10.0
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/arrow/arrow-vector/0.10.0
+cp %{SOURCE7} %{buildroot}/usr/share/java/.m2/repository/org/apache/arrow/arrow-vector/0.10.0
 
 
 %files
@@ -41,5 +85,10 @@ cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/apache/arrow/arrow-
 
 %files data
 %defattr(-,root,root,-)
+/usr/share/java/.m2/repository/org/apache/arrow/arrow-format/0.10.0/arrow-format-0.10.0.jar
+/usr/share/java/.m2/repository/org/apache/arrow/arrow-format/0.10.0/arrow-format-0.10.0.pom
+/usr/share/java/.m2/repository/org/apache/arrow/arrow-java-root/0.10.0/arrow-java-root-0.10.0.pom
 /usr/share/java/.m2/repository/org/apache/arrow/arrow-memory/0.10.0/arrow-memory-0.10.0.jar
 /usr/share/java/.m2/repository/org/apache/arrow/arrow-memory/0.10.0/arrow-memory-0.10.0.pom
+/usr/share/java/.m2/repository/org/apache/arrow/arrow-vector/0.10.0/arrow-vector-0.10.0.jar
+/usr/share/java/.m2/repository/org/apache/arrow/arrow-vector/0.10.0/arrow-vector-0.10.0.pom
