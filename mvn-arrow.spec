@@ -4,7 +4,7 @@
 #
 Name     : mvn-arrow
 Version  : 0.10.0
-Release  : 3
+Release  : 4
 URL      : https://github.com/apache/arrow/archive/apache-arrow-0.10.0.tar.gz
 Source0  : https://github.com/apache/arrow/archive/apache-arrow-0.10.0.tar.gz
 Source1  : https://repo1.maven.org/maven2/org/apache/arrow/arrow-format/0.10.0/arrow-format-0.10.0.jar
